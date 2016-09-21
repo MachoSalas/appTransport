@@ -7,6 +7,7 @@ package GUI;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,11 +33,24 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         Desktop = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
-        btnMnuDriver = new javax.swing.JButton();
-        btnMnuVehicle = new javax.swing.JButton();
+        btnConductores = new javax.swing.JButton();
+        btnVehiculos = new javax.swing.JButton();
+        btnTransportes = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuConductores = new javax.swing.JMenuItem();
+        jMenuVehiculos = new javax.swing.JMenuItem();
+        jMenuTransportes = new javax.swing.JMenuItem();
+        jMenuSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuParalelo = new javax.swing.JMenuItem();
+        jMenuCascada = new javax.swing.JMenuItem();
+        jMenuCerrarActual = new javax.swing.JMenuItem();
+        jMenuCerrarTodas = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuContenido = new javax.swing.JMenuItem();
+        jMenuAcercade = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -54,28 +68,111 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        btnMnuDriver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/driver.png"))); // NOI18N
-        btnMnuDriver.setFocusable(false);
-        btnMnuDriver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnMnuDriver.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnMnuDriver.addActionListener(new java.awt.event.ActionListener() {
+        btnConductores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/driver.png"))); // NOI18N
+        btnConductores.setFocusable(false);
+        btnConductores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnConductores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnConductores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMnuDriverActionPerformed(evt);
+                btnConductoresActionPerformed(evt);
             }
         });
-        jToolBar1.add(btnMnuDriver);
+        jToolBar1.add(btnConductores);
 
-        btnMnuVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vehicle.png"))); // NOI18N
-        btnMnuVehicle.setFocusable(false);
-        btnMnuVehicle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnMnuVehicle.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnMnuVehicle);
+        btnVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vehicle.png"))); // NOI18N
+        btnVehiculos.setFocusable(false);
+        btnVehiculos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVehiculos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnVehiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVehiculosActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(btnVehiculos);
 
-        jMenu1.setText("File");
+        btnTransportes.setText("Transportes");
+        btnTransportes.setFocusable(false);
+        btnTransportes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTransportes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnTransportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTransportesActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(btnTransportes);
+
+        btnSalir.setText("Salir");
+        btnSalir.setFocusable(false);
+        btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnSalir);
+
+        jMenu1.setText("Archivo");
+
+        jMenuConductores.setText("Conductores");
+        jMenuConductores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuConductoresActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuConductores);
+
+        jMenuVehiculos.setText("Vehiculos");
+        jMenuVehiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuVehiculosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuVehiculos);
+
+        jMenuTransportes.setText("Transportes");
+        jMenuTransportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuTransportesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuTransportes);
+
+        jMenuSalir.setText("Salir");
+        jMenuSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuSalirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuSalir);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Ventanas");
+
+        jMenuParalelo.setText("En Paralelo");
+        jMenu2.add(jMenuParalelo);
+
+        jMenuCascada.setText("En Cascada");
+        jMenuCascada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuCascadaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuCascada);
+
+        jMenuCerrarActual.setText("Cerrar Actual");
+        jMenu2.add(jMenuCerrarActual);
+
+        jMenuCerrarTodas.setText("Cerrar Todos");
+        jMenu2.add(jMenuCerrarTodas);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Ayuda");
+
+        jMenuContenido.setText("Contenido");
+        jMenu3.add(jMenuContenido);
+
+        jMenuAcercade.setText("Acerca de...");
+        jMenu3.add(jMenuAcercade);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -97,11 +194,49 @@ public class frmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMnuDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMnuDriverActionPerformed
-        frmDriver win = new frmDriver();
+    private void btnConductoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConductoresActionPerformed
+        frmDrivers win = new frmDrivers();
         Desktop.add(win);
         win.setVisible(true);
-    }//GEN-LAST:event_btnMnuDriverActionPerformed
+    }//GEN-LAST:event_btnConductoresActionPerformed
+
+    private void jMenuTransportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuTransportesActionPerformed
+        frmTransports win = new frmTransports();
+        Desktop.add(win);
+        win.setVisible(true);
+    }//GEN-LAST:event_jMenuTransportesActionPerformed
+
+    private void jMenuCascadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCascadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuCascadaActionPerformed
+
+    private void jMenuVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVehiculosActionPerformed
+        frmVehicules win = new frmVehicules();
+        Desktop.add(win);
+        win.setVisible(true);
+    }//GEN-LAST:event_jMenuVehiculosActionPerformed
+
+    private void jMenuConductoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuConductoresActionPerformed
+        frmDrivers win = new frmDrivers();
+        Desktop.add(win);
+        win.setVisible(true);
+    }//GEN-LAST:event_jMenuConductoresActionPerformed
+
+    private void jMenuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSalirActionPerformed
+       
+    }//GEN-LAST:event_jMenuSalirActionPerformed
+
+    private void btnTransportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportesActionPerformed
+        frmTransports win = new frmTransports();
+        Desktop.add(win);
+        win.setVisible(true);
+    }//GEN-LAST:event_btnTransportesActionPerformed
+
+    private void btnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiculosActionPerformed
+        frmVehicules win = new frmVehicules();
+        Desktop.add(win);
+        win.setVisible(true);
+    }//GEN-LAST:event_btnVehiculosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,11 +275,24 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
-    private javax.swing.JButton btnMnuDriver;
-    private javax.swing.JButton btnMnuVehicle;
+    private javax.swing.JButton btnConductores;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnTransportes;
+    private javax.swing.JButton btnVehiculos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem jMenuAcercade;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuCascada;
+    private javax.swing.JMenuItem jMenuCerrarActual;
+    private javax.swing.JMenuItem jMenuCerrarTodas;
+    private javax.swing.JMenuItem jMenuConductores;
+    private javax.swing.JMenuItem jMenuContenido;
+    private javax.swing.JMenuItem jMenuParalelo;
+    private javax.swing.JMenuItem jMenuSalir;
+    private javax.swing.JMenuItem jMenuTransportes;
+    private javax.swing.JMenuItem jMenuVehiculos;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
     @Override
